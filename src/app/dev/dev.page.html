@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> {{ (dev|async)?.name }} </ion-title>
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content padding>
+
+  <p>Descripcion: {{ (dev|async)?.desc }}</p> 
+  <p>Valor Actual: {{ (dev|async)?.value }}</p>
+  
+
+  <br>
+  <ion-button (click)="navTabs()" fill="clear" expand="block">Volver</ion-button>
+
+</ion-content>
