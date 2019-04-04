@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Device } from '../models/device/device.model';
 import { Router, ActivatedRoute } from '@angular/router'; 
-import { ParaService } from '../services/data/para.service';
 import { FirebaseService } from '../services/firebase/firebase.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
