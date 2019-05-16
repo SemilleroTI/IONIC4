@@ -1,11 +1,29 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>PAGINA DE INICIO</ion-title>
+    <ion-title>BIENVENIDO</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 
-  <ion-button fill="clear" expand="full" (click)="navTabs()">Iniciar Sesion</ion-button>
+  <img src="../../assets/img/sena.png">
+
+  <p>Para poder iniciar sesion en la aplicacion, porfavor utilice una de las cuentas preparadas que le otorgaremos</p>
+
+  <ion-item>
+    <ion-label position="floating">Correo</ion-label>
+    <ion-input type="text" [(ngModel)]="mail"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="pwd"></ion-input>
+  </ion-item>
+
+  <br>
+
+  <ion-button fill="outline" expand="block" (click)="navTabs()">Iniciar Sesion</ion-button>
+
+  
 
 </ion-content>

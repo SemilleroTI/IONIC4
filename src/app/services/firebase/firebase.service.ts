@@ -28,8 +28,8 @@ export class FirebaseService {
  }
 
  //Eliminar dispostivo
- deleteDev(device: Device) {
-     return this.listRef$.remove(device.key);
+ deleteDev(device: string) {
+     return this.listRef$.remove(device);
  }
 
  byKey(key: string): AngularFireObject<Device> {

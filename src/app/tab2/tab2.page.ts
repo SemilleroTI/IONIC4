@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-tab2',
@@ -8,10 +9,11 @@ import { Router } from '@angular/router'
 })
 export class Tab2Page {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private log: AngularFireAuth) {}
 
   navLog() {
     this.router.navigateByUrl('');
+    this.log.auth.signOut();
   }
 
 }

@@ -13,13 +13,14 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { config } from '../environments/config';
 import { FirebaseService } from './services/firebase/firebase.service';
+import { AngularFireAuthModule } from 'angularfire2/auth'
 
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-  AngularFireModule.initializeApp(config), AngularFireDatabaseModule],
+  AngularFireModule.initializeApp(config), AngularFireDatabaseModule, AngularFireAuthModule],
   providers: [
     StatusBar,
     SplashScreen,

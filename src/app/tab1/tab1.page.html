@@ -9,14 +9,12 @@
 <ion-content>
 
   <br>
-  <ion-button fill="clear" expand="block" (click)="navCreate()">Crear Dispositivo</ion-button>
+  <ion-button fill="outline" expand="block" (click)="navCreate()">Crear Dispositivo</ion-button>
 
-  
   <ion-list *ngFor="let d of Dev$ | async">
-    <ion-item (click)="onItem(d.key)">
+    <ion-item (click)="onItem(d)">
        {{ d.name }} 
     </ion-item>
   </ion-list>
-  
 
 </ion-content>

@@ -1,16 +1,24 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title> {{ (dev|async)?.name }} </ion-title>
+    <ion-title> {{ (dev | async )?.name }}  </ion-title>
   </ion-toolbar> 
 </ion-header>
 
 <ion-content padding>
-
-  <p>Descripcion: {{ (dev|async)?.desc }}</p> 
-  <p>Valor Actual: {{ (dev|async)?.value }}</p>
   
+  <p>Descripcion: {{ (dev|async)?.desc }} </p>
+  <p>Valor Actual: {{ (dev|async)?.value }} </p>
+  
+  <ion-list>
+    <ion-item>
+      <ion-label>Prender / Apagar</ion-label>
+      <ion-toggle (click)="change()" [(ngModel)]="toggle"></ion-toggle>
+    </ion-item>
+  </ion-list>
 
   <br>
-  <ion-button (click)="navTabs()" fill="clear" expand="block">Volver</ion-button>
+  <ion-button (click)="deletThis()" fill="outline" expand="block">Eliminar</ion-button>
+  <br>
+  <ion-button (click)="navTabs()" fill="outline" expand="block">Volver</ion-button>
 
 </ion-content>
