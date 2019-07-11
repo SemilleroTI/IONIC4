@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+//LLAMANDO LIBRERIAS, SERVICIOS Y MODELOS
 import { AngularFireList } from 'angularfire2/database'
 import { Device } from '../models/device/device.model';
 import { Observable } from 'rxjs';
@@ -16,10 +17,12 @@ import { NavController } from '@ionic/angular';
 })
 export class Tab1Page implements OnInit {
 
+  //OBSERVABLES, VARIABLES EN DONDE SE GUARDARN LOS DATOS
   private refDev$: AngularFireList<Device>;
   private Dev$: Observable<Device[]>;
   
   constructor(private router: Router, private db: FirebaseService, private nav: NavparamService, private ctrl: NavController) {
+    //LLAMANDO LA BASE DE DATOS ESTO DEVUELVE UN OBSERVABLE EL CUAL UTILIZAMOS PARA MOSTRAR LOS DATOS EN HTML
     this.refDev$ = this.db.getAll();
     this.Dev$ = this.refDev$.snapshotChanges().pipe(
       map(changes => 
@@ -28,10 +31,14 @@ export class Tab1Page implements OnInit {
 
   }
 
+  //FUNCION PARA IR A LA PAGINA DE CREAR
   navCreate() {
     this.router.navigateByUrl('/create');
   }
 
+  //FUNCION PARA IR A LA PAGINA DE DISPOTIVIO
+  //AL SELECCIONAR UN DISPOSITIVO ESTAMOS SELECCIONANDO LA LLAVE DE DICHO DISPOSITIVO
+  //Y DESPUES NOS VAMOS A LA PAGINA DE DISPOTIVOS CON ESA LLAVE Y UNA COPIA DEL OBJETO ESTATICO
   onItem(d: Device) {
     this.nav.setData(d);
     this.nav.setKey(d.key);

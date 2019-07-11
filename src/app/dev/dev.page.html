@@ -1,14 +1,17 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <!--LLAMA AL NOMBRE DEL DISPOSITIVO-->
     <ion-title> {{ (dev | async )?.name }}  </ion-title>
   </ion-toolbar> 
 </ion-header>
 
 <ion-content padding>
   
+  <!--LLAMA A LA DESCRIPCION DEL DISPOSITIVO Y EL VALOR-->
   <p>Descripcion: {{ (dev|async)?.desc }} </p>
   <p>Valor Actual: {{ (dev|async)?.value }} </p>
   
+  <!--EL TOGGLE O SWITCH SE ENCARGA DE PRENDER O APAGAR-->
   <ion-list>
     <ion-item>
       <ion-label>Prender / Apagar</ion-label>
@@ -16,8 +19,10 @@
     </ion-item>
   </ion-list>
 
+  <!--BOTONE DE VOLVER AL A LISTA PRINCIAPL-->
   <br>
   <ion-button (click)="deletThis()" fill="outline" expand="block">Eliminar</ion-button>
+  <!--BOTON DE ELIMINAR DISPOSTIVO(AÑADIR MAS ESPACIO O AÑADIR UN TOAST-->
   <br>
   <ion-button (click)="navTabs()" fill="outline" expand="block">Volver</ion-button>
 

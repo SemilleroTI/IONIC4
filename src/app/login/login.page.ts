@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+//IMPORTANDO MODULOS Y LIBRERIAS
 import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { ToastController } from '@ionic/angular';
@@ -20,7 +21,8 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
   }
-
+ 
+  //FUNCION PARA INICIO DE SESION
   async navTabs() {
     try {
       const log = await this.log.auth.signInWithEmailAndPassword(this.mail,this.pwd);
@@ -39,6 +41,7 @@ export class LoginPage implements OnInit {
     }
   }
 
+  //FUNCION QUE CREA UN ERROR AL HABER UN ITENTO FALLIDO DE INCIAR SESION
   async tos() {
     const tos = await this.toast.create({message: 'Error durante el inicio de sesion!', duration: 3000, position: 'top', color: 'danger'});
     tos.present();
